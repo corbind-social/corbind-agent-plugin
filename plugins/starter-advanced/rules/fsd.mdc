@@ -1,0 +1,20 @@
+---
+alwaysApply: true
+---
+
+# FSD Architecture Summary
+
+## Layers (Hierarchy: Top \rightarrow$ Bottom)
+- App (src/app/): Initialization, routes, global providers, and styles. No business logic.
+- Pages (src/pages/): Page composition. Contains page UI and specific dialogs. No fetch or complex logic.
+- Widgets (src/widgets/): Complex and independent components that combine multiple Features.
+- Features (src/features/): Interactions that generate value (e.g., "Like", "Checkout"). Contains API, UI, library (logic), and model.
+- Entities (src/entities/): Domain models (User, Product). Contains interfaces, enums, constants, and formatters.
+- Shared (src/shared/): UI Kit (Button, Input), generic utilities, infrastructure configuration (Axios, Prisma). Business independent.
+
+## Core Rules
+- Linear Hierarchy: A layer can only import from layers below it (e.g., Feature imports from Entity, but Entity never imports from Feature).
+- Slices: Division by business domain within the layers (e.g., entities/user, features/auth).
+- Segments: Technical division within the Slice (ui, api, model, lib, config).
+- Public API: Every slice/segment must have an index.ts file. Only what is exported there can be used externally.
+- Don't Repeat Yourself (DRY): Domain Interfaces and Enums reside in Entities; never duplicate types or use magic strings.

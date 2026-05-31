@@ -1,0 +1,127 @@
+---
+description: Baseline coding standards for Mobile applications
+alwaysApply: false
+---
+
+# Mobile Guide
+
+This guide defines how agents and developers must implement mobile apps code Clean Architecture with feature-based modules.
+
+## Goals
+
+- Keep business rules independent from framework details.
+- Scale by feature without creating cross-module coupling.
+- Make route files thin and push logic into `src/`.
+- Keep components reusable, testable, and easy to reason about.
+
+## Folder Structure
+
+```text
+app/                       # Expo Router entrypoints only
+  _layout.tsx
+  (tabs)/
+    _layout.tsx
+    index.tsx
+    explore.tsx
+  modal.tsx
+src/
+  app/                     # App-level composition (providers, navigation)
+    navigation/
+    providers/
+  pages/                   # Route-level page modules (UI composition only)
+    home-page/
+    explore-page/
+    modal-page/
+  features/                # User-value interactions (per feature)
+    home-feed/
+      data/
+      lib/
+      model/
+      ui/
+    explore-categories/
+      data/
+      lib/
+      model/
+      ui/
+  entities/                # Domain entities and shared domain types
+    book/
+      model/
+  shared/                  # Cross-feature technical building blocks
+    config/
+    lib/
+    ui/
+```
+
+## Layer Responsibilities
+
+- `app`: global providers, navigation setup, app bootstrap wiring.
+- `pages`: assemble screen-level UI using features and shared primitives.
+- `features`: use-cases and feature-specific logic.
+- `entities`: domain types and business model definitions.
+- `shared`: generic UI components, hooks, and configs without domain meaning.
+
+## Dependency Rules
+
+Allowed import direction only:
+
+`app -> pages -> features -> entities -> shared`
+
+Additional rules:
+
+- `shared` cannot import from any higher layer.
+- `entities` can import only from `shared`.
+- `features` can import from `entities` and `shared`.
+- `pages` can import from `features`, `entities`, `shared`.
+- `app` can import from all lower layers.
+- Files inside `app/` (Expo Router) must import page/app modules only, not business logic.
+
+## Segment Intent Inside Each Feature
+
+- `model/`: interfaces, contracts, types, repository ports.
+- `data/`: repository implementations, adapters, external source integration.
+- `lib/`: use-cases and pure business orchestration.
+- `ui/`: hooks and presentational feature components.
+- `index.ts`: public API for external imports.
+
+## Coding Workflow For New Feature
+
+1. Create `src/features/<feature-name>/`.
+2. Define contracts in `model/` (types, repository interface).
+3. Implement use-case in `lib/`.
+4. Implement data source in `data/` (API/local/mock).
+5. Expose a hook or component in `ui/`.
+6. Export only intended public symbols in `index.ts`.
+7. Consume from `src/pages/<page-name>/ui/<page>.tsx`.
+8. Keep Expo Router file as a route adapter only.
+
+## Route File Rule (Critical)
+
+`app/` files are adapters, not feature logic containers.
+
+Good:
+
+```ts
+import { HomePage } from '@/pages/home-page';
+export default function Route() {
+  return <HomePage />;
+}
+```
+
+Bad:
+
+- defining use-case logic directly inside `app/(tabs)/index.tsx`
+- calling repositories directly from route files
+- importing low-level data adapters in route files
+
+## Public API Rule
+
+Every slice should expose an `index.ts` file. External layers should import from these public entrypoints instead of deep internal paths.
+
+## Quality Checklist Before Finishing
+
+- Imports follow allowed direction.
+- No business logic in route files.
+- Feature use-cases are isolated in `lib/`.
+- Data access goes through repository contracts from `model/`.
+- UI layer only orchestrates hooks/use-cases and rendering.
+- `npm run lint` passes for `apps/mobile`.

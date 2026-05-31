@@ -1,0 +1,62 @@
+---
+alwaysApply: true
+---
+
+# Overview
+- This project is a monorepo landing page and dapp for Corbind
+- It works with another repo only for smart contracts
+- The journey (UX/UI) MUST remove objections
+
+# Pages
+
+## Landing page (/)
+- Home: a SPA to show who is Corbind and invite leads to enter in the ecosystem
+
+## DApp (/app)
+- Home: CTAs in top, to invite writers to publish and readers to read a top pick book. Filters by category or text. Follow by a banner to show campaigns and other informations (e.g. book promotions) and then a list of carousel, each one is a category of books.
+- Bookcase: a profile page to show all avaliable books (reading), want to read (watchlist) and favorite books.
+- Publish: a place to up a epub or pdf, define title and other infos, then Corbind will publish it onchain and show in marketplace to read. The publish isn't a simple push to a store and download. See how publish works and how to recovery in @publish-read-workflow.mdc
+- Book: a page to show details of the book with some actions (e.g. rent, save or share)
+- ereader: a page to decrypt book content and show on screen (cannot copy content) if user pay for rent by 30 days 
+
+# Stack
+
+## Frontend
+- Using NextJS, version 16 with ReactJS, version 19, to build the web app
+- Use React Context to manage states
+- Use Next Intl (i18n) to internationalization (en, pt-BR)
+- Use Tailwind CSS to style
+- Use Yup and Zod to forms
+- Use Mui/icons-material and Mui/material to icons, svg and others
+- Use privy as wallet connection (web3 plug-in-play)
+
+## Code
+- Should be responsible, thinking in mobile-first
+- Use FSD Architecture to organize the code
+- Prefer Component Composition 
+- Prefer SSR instead
+- Use Cache to increase perfomance
+- Prefer divide UI/UX from business rules, using techniques like Pattern Container/Presentational.
+
+### Colors
+--color-primary: #6d597a;
+--color-secondary: #beb2c8;
+--color-highlight: #05a8aa;
+--color-contrast: #d7d6d6;
+--color-base: #181A1B;
+
+## Backend
+- Use Functions in NextJS api router developed in Typescript
+- Use Ethersjs, Alchemy to Web3/blockchain
+- Use DynamoDB for database
+
+### Code
+- Use modular architecture like Clean Arch to increase code quality
+- Always abstract an external resource (e.g. framework, database, library)
+
+## General
+- Implement using Clean code concepts
+- Implement using SOLID principle
+- Write code and comments only in English, even when the prompt was written in other language
+- Always verify that the code is compiling correctly at the end of your changes.
+- Always refactor the code to increase quality, using industry best practices at the end of your changes.

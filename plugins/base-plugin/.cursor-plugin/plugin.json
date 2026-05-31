@@ -1,0 +1,13 @@
+{
+  "name": "base-plugin",
+  "displayName": "Base Plugin",
+  "version": "0.1.0",
+  "description": "Corbind base plugin for developing",
+  "author": {
+    "name": "Corbind",
+    "email": "contact@corbind.com"
+  },
+  "license": "GPL-3.0",
+  "keywords": ["corbind", "plugin"],
+  "logo": "assets/logo.png"
+}
