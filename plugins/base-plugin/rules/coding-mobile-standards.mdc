@@ -3,12 +3,9 @@ description: Baseline coding standards for Mobile applications
 alwaysApply: false
 ---
 
-# Mobile Guide
-
-This guide defines how agents and developers must implement mobile apps code Clean Architecture with feature-based modules.
-
 ## General
 - Always think about internalization, cause must be access globaly.
+- Always think about maintainability and scale of the project during development
 
 ## Goals
 

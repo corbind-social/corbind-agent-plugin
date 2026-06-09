@@ -10,9 +10,11 @@ alwaysApply: false
 ## Code
 - Use clean Architecture to organize the code
 - Use Cache to increase perfomance
-- Always abstract an external resource (e.g. framework, database, library)
 - Implement using Clean code concepts
 - Implement using SOLID principle
 - Write code and comments only in English, even when the prompt was written in other language
+- Before to implement, check if exists a reliable library or internal component doing it
+- Always think about maintainability and scale of the project during development
+- Always abstract an external resource (e.g. framework, database, library)
 - Always verify that the code is compiling correctly at the end of your changes.
 - Always refactor the code to increase quality, using industry best practices at the end of your changes.

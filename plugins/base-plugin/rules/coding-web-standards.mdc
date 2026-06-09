@@ -10,7 +10,7 @@ alwaysApply: false
 - Use Tailwind CSS to style
 - Use Yup and Zod to forms
 - Use Mui/icons-material and Mui/material to icons, svg and others
-- Use privy as wallet connection (web3 plug-in-play)
+- Use reown as wallet connection (web3 plug-in-play)
 
 ## Code
 - Should be responsible, thinking in mobile-first
@@ -19,6 +19,7 @@ alwaysApply: false
 - Prefer SSR instead
 - Use Cache to increase perfomance
 - Prefer divide UI/UX from business rules, using techniques like Pattern Container/Presentational.
+- Always think about maintainability and scale of the project during development
 
 ## General
 - Implement using Clean code concepts
