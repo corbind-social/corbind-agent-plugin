@@ -1,0 +1,19 @@
+---
+description: Understand what is the Corbi web app for Writers
+alwaysApply: false
+---
+
+# Mobile app for readers (e-readers)
+- Greater accessibility and ownership of the book. The entire experience, from searching to reviewing, has been designed to ensure immersion.
+- It's not required login to see the page, only to interact with other users and books.
+
+## Pages
+- Home: banner with ads and recommendation books (top stories), carousels by general, category, authors, etc. A search mode where an AI will search book.
+- Bookcase: Show read stats and avaliable books to read.
+- Read: Show the book the user is reading and when click open where it stopped.
+- Social: place to connect with other readers and writers.
+- Profile: The user profile to show your profile image, books, favorite authors and books.
+
+## Immersion mode
+- When enabled the user will not receive notifications and the reader page will open full screen.
+- Everything is important to avoid distractions

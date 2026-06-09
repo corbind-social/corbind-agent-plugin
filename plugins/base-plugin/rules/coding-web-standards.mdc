@@ -20,19 +20,13 @@ alwaysApply: false
 - Use Cache to increase perfomance
 - Prefer divide UI/UX from business rules, using techniques like Pattern Container/Presentational.
 
-### Colors
---color-primary: #6d597a;
---color-secondary: #beb2c8;
---color-highlight: #05a8aa;
---color-contrast: #d7d6d6;
---color-base: #181A1B;
-
 ## General
 - Implement using Clean code concepts
 - Implement using SOLID principle
 - Write code and comments only in English, even when the prompt was written in other language
 - Always verify that the code is compiling correctly at the end of your changes.
 - Always refactor the code to increase quality, using industry best practices at the end of your changes.
+- Always think about internalization, cause must be access globaly.
 
 # FSD Architecture Summary
 

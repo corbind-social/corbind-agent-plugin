@@ -7,6 +7,9 @@ alwaysApply: false
 
 This guide defines how agents and developers must implement mobile apps code Clean Architecture with feature-based modules.
 
+## General
+- Always think about internalization, cause must be access globaly.
+
 ## Goals
 
 - Keep business rules independent from framework details.

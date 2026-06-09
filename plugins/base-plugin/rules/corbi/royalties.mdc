@@ -1,0 +1,20 @@
+---
+description: Understand the how the royalties is distributed in Corbi platform
+alwaysApply: false
+---
+
+## Royalties distribution
+
+### Writer
+- First sell: 85%
+- Other trades and rental: 10%
+
+### Owner
+- First sell: 0%
+- Other trades: 80%
+- rental: 75%
+
+### Corbind
+- First sell: 15%
+- Other trades: 10%
+- rental: 15%

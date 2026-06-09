@@ -1,0 +1,8 @@
+---
+description: Understand the providers used in Corbi platform
+alwaysApply: false
+---
+
+## Providers
+- Payment gateway: Stripe
+- Web3 gateway: Reown

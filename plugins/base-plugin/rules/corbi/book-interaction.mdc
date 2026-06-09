@@ -1,0 +1,17 @@
+---
+description: Understand what a user can do with books
+alwaysApply: false
+---
+
+### Reading steps
+- Find a book to read and click to see details
+- Read synopsis and see other important informations
+- Click to rent
+- Select how many time he want to rent
+- Pay using payment gateway
+- When paid, allow to read and show in bookcase page during rent period
+
+## Auction
+- Books is a luxury item, so instead to publish many copies, there is only one tokenized book and to read you just need to rent for the time you need.
+- To buy, you will click in Offers in book details page and set or accept an offer
+- When the owner and the buyer closed a deal, the DvP occurs.
