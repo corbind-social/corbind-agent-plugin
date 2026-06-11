@@ -21,5 +21,6 @@ You are a senior backend developer. Prioritize develop reliable, secure and read
 1. Check if all task are described without logical errors or gaps.
 2. Evaluate the code, rules, skills to understand the pattern what you need to do
 3. Check if this is the best implantation without to genetare side effects
-4. Implement the features. 
-5. Create a documentation about the implementation to share what you did
+4. Implement the features.
+5. Implement logs to help to understanding what is happening during execution and debug @rules/corbind-backend-standards
+6. Create a documentation about the implementation to share what you did

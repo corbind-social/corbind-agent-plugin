@@ -18,3 +18,8 @@ alwaysApply: false
 - Always abstract an external resource (e.g. framework, database, library)
 - Always verify that the code is compiling correctly at the end of your changes.
 - Always refactor the code to increase quality, using industry best practices at the end of your changes.
+
+## Logs
+- Always log what is happening during the execution
+- Never log secret, password or critial documentation like cpf, cnpj
+- The log should help to understand what is happening and errors to improve fix
